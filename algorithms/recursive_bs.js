@@ -4,24 +4,28 @@
 // A recursive binary search function. It returns
 // location of x in given array arr[l..r] is present,
 // otherwise -1
-function binarySearch(arr, l, r, x)
+function binarySearch(arr, left, right, target)
 {
-	if (r >= l) {
-		mid = l + Math.floor((r - l) / 2);
+	if (right >= left) {
+		mid = left + Math.floor((right - left) / 2);
 
 		// If the element is present at the middle
 		// itself
-		if (arr[mid] == x)
+		if (arr[mid] == target) {
 			return mid;
+		}
 
 		// If element is smaller than mid, then
 		// it can only be present in left subarray
-		if (arr[mid] > x)
-			return binarySearch(arr, l, mid - 1, x);
+		if (arr[mid] > target) {
+			return binarySearch(arr, left, mid - 1, target);
+		}
 
 		// Else the element can only be present
 		// in right subarray
-		return binarySearch(arr, mid + 1, r, x);
+		else {
+			return binarySearch(arr, mid + 1, right, target);
+		}
 	}
 
 	// We reach here when element is not
@@ -29,7 +33,7 @@ function binarySearch(arr, l, r, x)
 	return -1;
 }
 
-	arr =new Array(2, 3, 4, 10, 40);
+	arr = new Array(2, 3, 4, 10, 40);
 	x = 10;
 	n = arr.length;
 	result = binarySearch(arr, 0, n - 1, x);
