@@ -24,6 +24,20 @@
       "name": "Recursive",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\algorithms\\recursive_bs.js"
+    },
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "BFS",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\algorithms\\bfs.js"
+    },
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "DFS",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\algorithms\\dfs.js"
     }
   ]
 }

@@ -2,7 +2,7 @@
 
 class QNode {
   constructor(key) {
-    this.key = key;
+    this.data = key;
     this.next = null;
   }
 }
@@ -43,7 +43,11 @@ class Queue {
       this.tail = null;
     }
 
-    return temp;
+    return temp.data;
+  }
+
+  isEmpty() {
+    return this.head == null;
   }
 }
 
@@ -54,5 +58,7 @@ queue.enqueue(30);
 queue.enqueue(40);
 queue.enqueue(50);
 queue.dequeue();
-console.log("Queue this.head : " + queue.head.key + "\n");
-console.log("Queue this.tail : " + queue.tail.key + "\n");
+console.log("Queue this.head : " + queue.head.data + "\n");
+console.log("Queue this.tail : " + queue.tail.data + "\n");
+
+export default Queue;
